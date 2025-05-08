@@ -13,21 +13,6 @@ A lightweight Lua tokenizer and parser, designed to convert Lua source code into
 
 ---
 
-## 📂 Project Structure
-
-LUA_Parser/
-├── src/
-│ ├── Main.cpp # Entry point
-│ ├── Tokenizer.cpp # Tokenizer logic (lexical analysis)
-│ ├── Tokenizer.hpp
-│ ├── Parser.cpp # AST parser stub
-│ ├── Parser.hpp
-├── test.lua # Sample Lua file
-├── CMakeLists.txt
-└── README.md
-
-
----
 
 ## ⚙️ Building
 
@@ -36,13 +21,12 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
+```
 
 🚀 Running
 After building, run the binary like this:
 
-bash
-Copy
-Edit
+```bash
 ./LuaToLLVM
-
+```
 Make sure test.lua is located at the project root.
