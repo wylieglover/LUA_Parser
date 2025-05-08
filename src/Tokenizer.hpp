@@ -1,11 +1,11 @@
-#include <vector>
-#include <string>
+#pragma once
 
-namespace parser{
-    using namespace std;
-    
-    enum TokenType{
-        WHITESPACE, // Token never has this type
+#include <string>
+#include <vector>
+
+namespace lexer {
+    enum TokenType {
+        WHITESPACE,
         IDENTIFIER,
         INTEGER_LITERAL,
         STRING_LITERAL,
@@ -19,18 +19,17 @@ namespace parser{
 
     class Token {
     public:
-        enum TokenType Type{WHITESPACE};
-        string text;
+        TokenType Type{WHITESPACE};
+        std::string text;
         size_t StartOffset{0};
         size_t EndOffset{0};
         size_t LineNumber{0};
     };
 
-    class Tokenizer{
+    class Tokenizer {
     public:
-        vector<Token> parse(const string &inProgram);
-
+        std::vector<Token> tokenize(const std::string &inProgram);
     private:
-        void endToken(Token &token, vector<Token> &tokens);
+        void endToken(Token &token, std::vector<Token> &tokens);
     };
 }
